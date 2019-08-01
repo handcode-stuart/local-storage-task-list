@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Task from "./Task";
 
 const StyledTaskList = styled.ul`
     margin: 10px 0;
@@ -7,15 +8,10 @@ const StyledTaskList = styled.ul`
     list-style-type: none;
 `;
 
-const Task = styled.li`
-    border-bottom: 1px solid lightgrey;
-    padding: 8px 0;
-`;
-
 const TaskList = ({ tasks }) => (
     <StyledTaskList>
         {tasks.map(task => (
-            <Task key={task.id}>{task.body}</Task>
+            <Task key={task.id} task={task} />
         ))}
     </StyledTaskList>
 );
