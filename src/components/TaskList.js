@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledTaskList = styled.ul`
-    margin: 0;
+    margin: 10px 0;
     padding: 0;
     list-style-type: none;
 `;

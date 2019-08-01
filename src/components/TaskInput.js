@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const StyledTaskInput = styled.input``;
+const StyledTaskInput = styled.input`
+    border: 2px solid lightgrey;
+    border-radius: 2px;
+    padding: 4px 6px;
+    transition: border-color 250ms ease-in-out;
+    font-size: 16px;
+
+    &:focus {
+        outline: none;
+        border-color: red;
+    }
+`;
 
 const TaskInput = ({ onSubmit }) => {
     const [task, setTask] = useState("");
@@ -12,12 +23,15 @@ const TaskInput = ({ onSubmit }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        const taskObj = {
-            id: task,
-            body: task,
-        };
-        onSubmit(taskObj);
-        setTask("");
+
+        if (task !== "") {
+            const taskObj = {
+                id: task,
+                body: task,
+            };
+            onSubmit(taskObj);
+            setTask("");
+        }
     };
 
     return (
