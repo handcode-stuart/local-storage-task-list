@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Task from "./Task";
 
 const StyledTaskList = styled.ul`
-    margin: 10px 0;
+    margin: 0;
     padding: 0;
     list-style-type: none;
 `;

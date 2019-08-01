@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const StyledTaskInput = styled.input`
-    border: 2px solid lightgrey;
-    border-radius: 2px;
-    padding: 4px 6px;
-    transition: border-color 250ms ease-in-out;
+    border: none;
+    width: 100%;
+    padding: 20px 10px;
     font-size: 16px;
+    background-color: #ededed;
 
     &:focus {
         outline: none;
-        border-color: red;
     }
 `;
 
