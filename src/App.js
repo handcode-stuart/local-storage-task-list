@@ -1,4 +1,16 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const StyledTaskList = styled.ul`
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+`;
+
+const Task = styled.li`
+    border-bottom: 1px solid lightgrey;
+    padding: 8px 0;
+`;
 
 const TaskInput = ({ onSubmit }) => {
     const [task, setTask] = useState("");
@@ -30,15 +42,24 @@ const TaskInput = ({ onSubmit }) => {
 };
 
 const TaskList = ({ tasks }) => (
-    <ul>
+    <StyledTaskList>
         {tasks.map(task => (
-            <li key={task.id}>{task.body}</li>
+            <Task key={task.id}>{task.body}</Task>
         ))}
-    </ul>
+    </StyledTaskList>
 );
 
 const App = () => {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState([
+        {
+            id: "435ewfh",
+            body: "Task 1",
+        },
+        {
+            id: "673rf65",
+            body: "Task 2",
+        },
+    ]);
 
     const handleSubmit = task => {
         setTasks([...tasks, task]);
