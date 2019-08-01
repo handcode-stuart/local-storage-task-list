@@ -25,15 +25,15 @@ const TaskInput = ({ onSubmit }) => {
         e.preventDefault();
 
         if (task !== "") {
-            const taskStripped = task
+            const taskStripped = `${task
                 .split(" ")
                 .join("-")
-                .toLowerCase();
-            const taskObj = {
-                id: taskStripped,
-                body: task,
-            };
+                .toLowerCase()}-${Date.now()}`;
+
+            const taskObj = { id: taskStripped, body: task };
+
             onSubmit(taskObj);
+
             setTask("");
         }
     };
