@@ -10,10 +10,15 @@ const App = () => {
         localStorage.setItem("tasks", JSON.stringify([...tasks, task]));
     };
 
+    const handleRemoveTask = id => {
+        setTasks(tasks.filter(task => task.id !== id));
+        localStorage.setItem("tasks", JSON.stringify(tasks.filter(task => task.id !== id)));
+    };
+
     return (
         <div>
             <TaskInput onSubmit={handleSubmit} />
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} handleRemoveTask={handleRemoveTask} />
         </div>
     );
 };

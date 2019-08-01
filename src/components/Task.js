@@ -6,6 +6,12 @@ const StyledTask = styled.li`
     padding: 8px 0;
 `;
 
-const Task = ({ task }) => <StyledTask key={task.id}>{task.body}</StyledTask>;
+const Task = ({ task: { id, body }, handleRemoveTask }) => {
+    const handleClick = () => {
+        handleRemoveTask(id);
+    };
+
+    return <StyledTask onClick={handleClick}>{body}</StyledTask>;
+};
 
 export default Task;

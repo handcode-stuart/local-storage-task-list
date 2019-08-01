@@ -8,10 +8,10 @@ const StyledTaskList = styled.ul`
     list-style-type: none;
 `;
 
-const TaskList = ({ tasks }) => (
+const TaskList = ({ handleRemoveTask, tasks }) => (
     <StyledTaskList>
         {tasks.map(task => (
-            <Task key={task.id} task={task} />
+            <Task key={task.id} task={task} handleRemoveTask={handleRemoveTask} />
         ))}
     </StyledTaskList>
 );
